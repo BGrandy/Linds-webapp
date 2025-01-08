@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero {
+    width: 100%;
+    height: var(--dynamic-height);
+    /* Use the CSS variable for dynamic height */
+    background-image: url('../assets/endohedralfullerene.png');
+    background-color: #5E605A;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    border: 1px solid red;
+    max-width: 1200px;
+    width: 100%;
+    height: var(--dynamic-height);
+    /* Use the CSS variable for dynamic height */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content h1 {
+    font-size: 56px;
+    font-weight: bolder;
+
+}
+
+
+.arrow {
+    animation: bounce .5s infinite alternate-reverse;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+@keyframes bounce {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(0, -5px);
+    }
+
+}
+
+.about-us {
+    background-color: #5E605A;
+    width: 100%;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: center;
+    padding-top: 80px;
+    text-align: center;
+}
+
+.about-us h1 {
+    color: #757575;
+    margin-bottom: 40px;
+    font-size: 3rem;
+}
+
+.about-us h2,
+p {
+    color: #FFF;
+}
+
+.about-us h2 {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+
+.about-us p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.about-us a {
+    background-color: #433A3F;
+    color: #FFF;
+    font-size: 1rem;
+    padding: 12px 24px;
+    border-radius: 4px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.about-us a:hover {
+    background-color: #3c3439;
+}
+
+.divider {
+    background-color: #433A3F;
+    height: 1px;
+    margin-top: 80px;
+    width: 80%;
+}
+
+.contact-us {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.contactus-info {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-top: 80px;
+    margin: 0 auto;
+    align-items: center;
+    border: 1px solid red;
+}
+
+
+.contactus-img {
+    padding-top: 80px;
+    display: flex;
+    height: 80%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
