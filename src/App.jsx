@@ -1,9 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import LandingPage from './components/LandingPage.jsx'
-import Research from './components/Research.jsx'
-import Publications from './components/Publications.jsx'
-import Team from './components/Team.jsx'
-import NotFound from './components/NotFound.jsx'
+import { LandingPage, Research, Publications, Team, NotFound, Layout } from './components';
 import './App.css'
 
 function App() {
@@ -11,10 +7,10 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<LandingPage />} />
-          <Route path='/Research' element={<Research />} />
-          <Route path='/Publications' element={<Publications />} />
-          <Route path='/Team' element={<Team />} />
+          <Route path='/' element={<Layout><LandingPage /></Layout>} />
+          <Route path='/Research' element={<Layout><Research /></Layout>} />
+          <Route path='/Publications' element={<Layout><Publications /></Layout>} />
+          <Route path='/Team' element={<Layout><Team /></Layout>} />
           <Route path='*' element={<NotFound />}></Route>
         </Routes>
       </BrowserRouter >
