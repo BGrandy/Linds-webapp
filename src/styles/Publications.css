@@ -1,0 +1,30 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    gap: 6rem 10px;
+}
+
+.grid-container > div > img{
+    display: flex;
+    width: 200px;
+    height: 100px;
+    margin: 0 auto;
+}
+.grid-container > div{
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+
+}
+
+.publication-title{
+    display: flex;
+    width: 100%;
+    padding-top: 60px;
+    align-items: center;
+    justify-content: center;
+}

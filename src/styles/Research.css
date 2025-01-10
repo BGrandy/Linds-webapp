@@ -7,9 +7,7 @@ body{
     flex-direction: row;
     width: 100%;
     max-width: 1200px;
-    border: 1px solid red;
-    margin: 0 auto;
-    margin-top: 60px;
+    margin: 60px auto;
 }
 
 .research-info, .research-card{

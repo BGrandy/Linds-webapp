@@ -1,3 +1,10 @@
-*{
-    margin-top: 40px;
+.footer-style{
+    width: 100%;
+    padding: 20px 0;
+    background-color: #433A3F;
+    padding-left: 56px;
+}
+
+.footer-style > p {
+    margin: 0;
 }
