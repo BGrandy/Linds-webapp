@@ -5,7 +5,7 @@ import RMCMap from '../assets/RMCMap.png'
 
 
 function LandingPage() {
-    const {  height } = useWindowDimensions();
+    const { height } = useWindowDimensions();
 
     const handleClick = () => {
         window.scrollTo(0, height)
@@ -43,12 +43,12 @@ function LandingPage() {
                         <h1>Contact us</h1>
                         <h2>Grandy Lab</h2>
                         <p>Royal Military College of Canada<br />
-                        Sawyer Mod 5, Room 2517 (office)<br />
-                        Sawyer Mod #, Room # (lab)</p>
+                            Sawyer Mod 5, Room 2517 (office)<br />
+                            Sawyer Mod #, Room # (lab)</p>
                         <h2>Lindsay Grandy, PhD</h2>
-                        <p><Link to='mailto:lindsay.grandy@rmc.ca' style={{backgroundColor: '#5E605A', padding: 0}}>lindsay.grandy@rmc.ca</Link><br />
-                        613-541-6000 ext. 6989<br />
-                        11 General Crerar Crescent, Kingston, ON, K7K 7B4</p>
+                        <p><Link to='mailto:lindsay.grandy@rmc.ca' className='email'>lindsay.grandy@rmc.ca</Link><br />
+                            613-541-6000 ext. 6989<br />
+                            11 General Crerar Crescent, Kingston, ON, K7K 7B4</p>
                     </div>
                     <div className='contactus-img'>
                         <img src={RMCMap} alt='RMCMAP'></img>

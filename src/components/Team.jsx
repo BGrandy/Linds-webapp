@@ -7,7 +7,7 @@ import pfp4 from '../assets/pfp4.avif'
 function Team() {
     return (
         <>
-            <div className='publication-title'><h2>Our Team</h2></div>
+            <div className='team-title'><h2>Our Team</h2></div>
             <div className='team-container'>
                 <div>
                     <img src={pfp1}></img>
@@ -31,7 +31,7 @@ function Team() {
                     <p>Research Assistant</p>
                 </div>
             </div>
-            <div className='publication-title'><h2>Lab Alumni</h2></div>
+            <div className='team-title'><h2>Lab Alumni</h2></div>
             <div className='labAlumbi-panel'>
                 <div className='labAlumbi-info'>
                     <h4>NCdt William Stewart</h4>

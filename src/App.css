@@ -1,11 +1,11 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
 h1 {
     color: #757575;
     margin-bottom: 40px;
     font-size: 3rem;
-}
-
-h2, p {
-    color: #FFF;
 }
 
 h2 {

@@ -36,6 +36,7 @@ h4{
 .research-panel{
     display: flex;
     flex-direction: row;
+    margin-bottom: 1rem;
 }
 
 .imgStruct{

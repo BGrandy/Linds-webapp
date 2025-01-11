@@ -1,10 +1,12 @@
 .footer-style{
+    
     width: 100%;
     padding: 20px 0;
     background-color: #433A3F;
-    padding-left: 56px;
+    padding-left: 50px;
 }
 
 .footer-style > p {
     margin: 0;
+    font-size: small !important;
 }

@@ -14,28 +14,28 @@ function Publications() {
                 <div>
                     <img src={img1}></img>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed augue  elementum, porttitor odio nec, accumsan magna. Sed vel mi vitae odio  suscipit rhoncus in nec nunc.</p>
+                    <a href='/'>Learn More 🢒</a>
                 </div>
                 <div>
                     <img src={img2}></img>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed augue  elementum, porttitor odio nec, accumsan magna. Sed vel mi vitae odio  suscipit rhoncus in nec nunc.</p>
+                    <a>Learn More 🢒</a>
                 </div>
                 <div>
                     <img src={img3}></img>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed augue  elementum, porttitor odio nec, accumsan magna. Sed vel mi vitae odio  suscipit rhoncus in nec nunc.</p>
+                    <a>Learn More 🢒</a>
                 </div>
                 <div>
                     <img src={img4}></img>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed augue  elementum, porttitor odio nec, accumsan magna. Sed vel mi vitae odio  suscipit rhoncus in nec nunc.</p>
+                    <a>Learn More 🢒</a>
                 </div>
                 <div>
                     <img src={img5}></img>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed augue  elementum, porttitor odio nec, accumsan magna. Sed vel mi vitae odio  suscipit rhoncus in nec nunc.</p>
+                    <a>Learn More 🢒</a>
                 </div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
             </div>
 
         </>

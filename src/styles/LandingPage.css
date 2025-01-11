@@ -2,10 +2,6 @@
     margin: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    font-family: Arial, Helvetica, sans-serif;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
 
 }
@@ -35,7 +31,7 @@
     margin-top: 5%;
     font-size: 56px;
     font-weight: bolder;
-
+    color: black;
 }
 
 .arrow {
@@ -103,8 +99,20 @@
 .contactus-img {
     padding-top: 80px;
     display: flex;
-    height: 80%;
+    height: 50%;
     margin: 0 auto;
     align-items: center;
     justify-content: center;
+}
+
+.email{
+    text-decoration: none;
+    font-size: 1.2rem;
+    background-color: #5E605A;
+    padding: 0;
+    color: black;
+}
+
+.email:hover{
+    background-color: #5E605A;
 }
