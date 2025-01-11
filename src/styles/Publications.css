@@ -1,0 +1,64 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    gap: 2rem 10rem;
+}
+
+.grid-container > div > img{
+    display: flex;
+    width: 200px;
+    height: 100px;
+    margin: 1rem auto;
+    padding: 5px;
+}
+.grid-container > div{
+    text-align: center;
+    width: 250px;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.publication-title{
+    display: flex;
+    width: 100%;
+    padding-top: 60px;
+    align-items: center;
+    justify-content: center;
+}
+
+.publication-panel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+}
+
+.publication-info {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: flex-end;
+}
+
+.publication-info > p, .publication-info > h4 {
+    margin-bottom: 0px;
+    line-height: initial;
+    font-size: medium !important;
+}
+
+.grid-container a{
+    all: inherit;
+    height: auto;
+}
+.grid-container a:hover{
+    all: inherit;
+    height: auto;
+    cursor: pointer;
+}

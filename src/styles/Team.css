@@ -1,0 +1,60 @@
+.team-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 2rem 30px;
+}
+
+.team-container>div>img {
+    display: flex;
+    height: 250px;
+    width: 250px;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin: 1rem auto;
+    padding: 5px;
+
+}
+
+.team-container>div {
+    text-align: center;
+    width: 250px;
+    height: 100%;
+    background-color: #5E605A;
+    border-radius: 5px;
+}
+
+.team-title {
+    display: flex;
+    width: 100%;
+    padding-top: 60px;
+    align-items: center;
+    justify-content: center;
+}
+
+.labAlumbi-panel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+}
+
+.labAlumbi-info {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: flex-end;
+}
+
+
+
+.labAlumbi-info > p, .labAlumbi-info > h4 {
+    margin-bottom: 0px;
+    line-height: initial;
+    font-size: medium !important;
+}

@@ -1,14 +1,14 @@
 * {
     margin: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+    user-select: none;
 
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .hero {
     width: 100%;
     height: var(--dynamic-height);
-    /* Use the CSS variable for dynamic height */
     background-image: url('../assets/endohedralfullerene.png');
     background-color: #5E605A;
     background-size: cover;
@@ -20,26 +20,29 @@
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    border: 1px solid red;
     max-width: 1200px;
     width: 100%;
     height: var(--dynamic-height);
-    /* Use the CSS variable for dynamic height */
     align-items: center;
     justify-content: space-between;
 }
 
 .content h1 {
+    margin-top: 5%;
     font-size: 56px;
     font-weight: bolder;
-
+    color: black;
 }
 
-
 .arrow {
+    all: initial;
     animation: bounce .5s infinite alternate-reverse;
     margin-bottom: 5px;
+    font-size: x-large;
     cursor: pointer;
+}
+.arrow:hover{
+    background-color: initial;
 }
 
 @keyframes bounce {
@@ -68,45 +71,6 @@
     text-align: center;
 }
 
-.about-us h1 {
-    color: #757575;
-    margin-bottom: 40px;
-    font-size: 3rem;
-}
-
-.about-us h2,
-p {
-    color: #FFF;
-}
-
-.about-us h2 {
-    margin-top: 20px;
-    margin-bottom: 30px;
-    font-size: 2rem;
-}
-
-
-.about-us p {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-    line-height: 1.6;
-}
-
-.about-us a {
-    background-color: #433A3F;
-    color: #FFF;
-    font-size: 1rem;
-    padding: 12px 24px;
-    border-radius: 4px;
-    border: none;
-    transition: background-color 0.3s ease;
-}
-
-.about-us a:hover {
-    background-color: #3c3439;
-}
-
 .divider {
     background-color: #433A3F;
     height: 1px;
@@ -129,15 +93,26 @@ p {
     padding-top: 80px;
     margin: 0 auto;
     align-items: center;
-    border: 1px solid red;
 }
 
 
 .contactus-img {
     padding-top: 80px;
     display: flex;
-    height: 80%;
+    height: 50%;
     margin: 0 auto;
     align-items: center;
     justify-content: center;
+}
+
+.email{
+    text-decoration: none;
+    font-size: 1.2rem;
+    background-color: #5E605A;
+    padding: 0;
+    color: black;
+}
+
+.email:hover{
+    background-color: #5E605A;
 }

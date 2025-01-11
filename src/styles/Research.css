@@ -1,0 +1,47 @@
+body{
+    background-color: #D4D4D2;
+}
+
+.research {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1200px;
+    margin: 60px auto;
+}
+
+.research-info, .research-card{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+h2, p {
+    color: black !important;
+}
+h4{
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.research-info{
+   margin-right: 20px;
+}
+
+.research-card{
+    flex-direction: column;
+    margin-left: 30px;
+}
+
+.research-panel{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+}
+
+.imgStruct{
+    display: flex;
+    margin-top: 20px;
+    width: 200px;
+    margin-right: 16px;
+}
