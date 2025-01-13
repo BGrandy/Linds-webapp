@@ -41,7 +41,8 @@
     font-size: x-large;
     cursor: pointer;
 }
-.arrow:hover{
+
+.arrow:hover {
     background-color: initial;
 }
 
@@ -118,7 +119,7 @@
     justify-content: center;
 }
 
-.email{
+.email {
     text-decoration: none;
     font-size: 1.2rem;
     background-color: #5E605A;
@@ -126,18 +127,16 @@
     color: black;
 }
 
-.email:hover{
+.email:hover {
     background-color: #5E605A;
 }
 
-@media (max-width: 1184px) {
+@media (max-width: 600px) {
     p {
         width: 100%;
     }
-    
-    .contactus-img{
+    .contactus-img {
         width: 100%;
         overflow: hidden;
     }
-    
 }
