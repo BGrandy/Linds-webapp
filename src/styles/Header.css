@@ -10,18 +10,12 @@
     transition: transform 0.25s ease-in-out;
     padding: 10px 0;
     text-decoration: none;
-
+    border-bottom: 1px solid black;
 }
 
 .header.hidden {
     transform: translateY(-200%);
     border-bottom: 0;
-}
-
-
-
-.header a:visited {
-    color: black;
 }
 
 .header ul {
@@ -32,14 +26,44 @@
 }
 
 .header a {
-    all: initial;
     text-decoration: none;
+    color: black;
+    position: relative;
     font-size: 150%;
 }
 
-.header a:hover {
-    all: initial;
-    text-decoration: underline;
-    font-size: 150%;
-    cursor: pointer;
+.header a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    /* Thickness of the underline */
+    background-color: black;
+    transition: width 0.3s ease;
+}
+
+.header a:hover::after {
+    width: 100%;
+}
+
+.header a.active::after {
+    width: 100%;
+}
+
+@media (max-width: 550px) {
+    .header ul {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 420px) {
+    .header a {
+        font-size: 100%;
+    }
+    .header ul {
+        gap: 40px;
+    }
 }
