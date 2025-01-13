@@ -7,7 +7,7 @@ body{
     flex-direction: row;
     width: 100%;
     max-width: 1200px;
-    margin: 60px auto;
+    margin: 80px auto;
 }
 
 .research-info, .research-card{
@@ -44,4 +44,20 @@ h4{
     margin-top: 20px;
     width: 200px;
     margin-right: 16px;
+}
+
+@media (max-width: 1079px) {
+    h2,p{
+    text-align: center;
+    }
+    .research{
+    flex-direction: column;
+    align-items: center;
+    }
+    .research-panel{
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+    }
+    
 }

@@ -18,7 +18,8 @@ function Team() {
                 <div>
                     <img src={pfp2}></img>
                     <h3>Capt Tristan Gauthier</h3>
-                    <p>Graduate Student</p>
+                    <p><p>Associate Professor <br />
+                        Graduate Student</p></p>
                 </div>
                 <div>
                     <img src={pfp3}></img>

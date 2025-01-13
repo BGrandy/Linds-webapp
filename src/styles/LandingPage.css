@@ -28,7 +28,7 @@
 }
 
 .content h1 {
-    margin-top: 5%;
+    margin-top: 7vh;
     font-size: 56px;
     font-weight: bolder;
     color: black;
@@ -71,6 +71,20 @@
     text-align: center;
 }
 
+.info a {
+    background-color: #433A3F;
+    color: #FFF;
+    font-size: 1rem;
+    padding: 12px 24px;
+    border-radius: 4px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.info a:hover {
+    background-color: #3c3439;
+}
+
 .divider {
     background-color: #433A3F;
     height: 1px;
@@ -89,7 +103,6 @@
 .contactus-info {
     display: flex;
     flex-direction: column;
-    width: 50%;
     padding-top: 80px;
     margin: 0 auto;
     align-items: center;
@@ -115,4 +128,16 @@
 
 .email:hover{
     background-color: #5E605A;
+}
+
+@media (max-width: 1184px) {
+    p {
+        width: 100%;
+    }
+    
+    .contactus-img{
+        width: 100%;
+        overflow: hidden;
+    }
+    
 }
