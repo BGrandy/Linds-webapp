@@ -10,7 +10,7 @@ function LandingPage() {
     const handleClick = () => {
         window.scrollTo(0, height)
     }
-
+    
     return (
         <>
             <section
