@@ -42,7 +42,7 @@ function Research() {
                 </div>
                 <div className='research-card'>
                     {researchTopics.map((topic) =>
-                        <div className='research-panel' key={topic.title}>
+                        <div className='research-panel' key={topic.img}>
                             <div>
                                 <img src={topic.img} className='imgStruct' alt={topic.title}></img>
                             </div>
