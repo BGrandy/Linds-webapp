@@ -140,7 +140,7 @@
 .header-mobile.show {
     opacity: 1;
     transform: translateY(0);
-    animation: flipIn 0.5s ease-out;
+    /* animation: flipIn 0.5s ease-out; */
 }
 
 .header-mobile.hide {
