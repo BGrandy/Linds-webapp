@@ -8,7 +8,7 @@ import img5 from '../assets/Untitled.png'
 function Publications() {
     return (
         <>
-            <div className='publication-title'><h2>Selected Publications</h2></div>
+            <h2 className='publication-title'>Selected Publications</h2>
             <div className='grid-container'>
 
                 <div>

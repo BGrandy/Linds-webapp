@@ -2,14 +2,16 @@ import '../styles/LandingPage.css'
 import { Link } from 'react-router-dom';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 import RMCMap from '../assets/RMCMap.png'
+import { useCallback } from 'react';
 
 
 function LandingPage() {
     const { height } = useWindowDimensions();
 
-    const handleClick = () => {
-        window.scrollTo(0, height)
-    }
+    const handleClick = useCallback(() => {
+        window.scrollTo(0, height);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
     
     return (
         <>
@@ -27,14 +29,14 @@ function LandingPage() {
                 <div className='info'>
                     <h1>About Us</h1>
                     <h2>We investigate corrosion and other materials degradation in the presence of ionizing radiation.</h2>
-                    <p>The long-term objective is to predict the impact of a constant flux of  ionizing radiation on metal degradation to improve the confidence in and lifetime of nuclear-related materials. With the use of advanced and  unique tools, including localized electrochemical probes and the  SLOWPOKE-2 nuclear reactor, our team determines corrosion rates and  mechanisms to develop long-term modeling for accurate degradation  mechanisms. We are a diverse and interdisciplinary team of chemists, engineers, metallurgists and physics, who do both fundamental and applied science research.</p>
+                    <p>The long-term objective is to predict the impact of a constant flux of ionizing radiation on metal degradation to improve the confidence in and lifetime of nuclear-related materials. With the use of advanced and unique tools, including localized electrochemical probes and the SLOWPOKE-2 nuclear reactor, our team determines corrosion rates and mechanisms to develop long-term modeling for accurate degradation mechanisms. We are a diverse and interdisciplinary team of chemists, engineers, metallurgists and physics, who do both fundamental and applied science research.</p>
                     <Link to='/Research'>Learn More</Link>
                     <div className='divider'></div>
                 </div>
                 <div className='info'>
                     <h1>Grandy Lab is Recruiting!</h1>
                     <h2>There are currently MSc and PhD positions available.</h2>
-                    <p>{`Students with a science or engineering background who are interested in  developing knowledge in electrochemistry, radiation, chemical modelling, and surface analysis are encouraged to apply. Please send an email with your CV and which project you're interested in.`}</p>
+                    <p>Students with a science or engineering background who are interested in developing knowledge in electrochemistry, radiation, chemical modelling, and surface analysis are encouraged to apply. Please send an email with your CV and which project you&apos;re interested in.</p>
                     <Link to='mailto:lindsay.grandy@rmc.ca'>Contact</Link>
                     <div className='divider'></div>
                 </div>
