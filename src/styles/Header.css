@@ -146,7 +146,7 @@
 .header-mobile.hide {
     opacity: 0;
     transform: translateY(-100%);
-    animation: flipOut 0.5s ease-out;
+    /* animation: flipOut 0.5s ease-out; */
 }
 
 .header-mobile ul {
@@ -170,16 +170,16 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background: rgba(0, 0, 0, 0.5); 
-    z-index: 9; 
-    visibility: hidden; 
-    opacity: 0; 
-    transition: opacity 0.3s ease, visibility 0.3s ease;  
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .overlay.visible {
-    visibility: visible; /* Becomes visible */
-    opacity: 1; /* Fully opaque */
+    visibility: visible;
+    opacity: 1;
 }
 
 @keyframes flipIn {
