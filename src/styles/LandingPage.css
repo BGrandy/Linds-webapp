@@ -135,8 +135,21 @@
     p {
         width: 100%;
     }
+
     .contactus-img {
         width: 100%;
         overflow: hidden;
+    }
+
+    .content>h1 {
+        position: absolute;
+        margin: 5px;
+        max-width: 80%;
+        left: 5px;
+    }
+
+    .content > .arrow {
+        position: absolute;
+        bottom: 5px;
     }
 }
