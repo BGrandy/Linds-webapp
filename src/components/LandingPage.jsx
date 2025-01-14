@@ -1,6 +1,6 @@
 import '../styles/LandingPage.css'
 import { Link } from 'react-router-dom';
-import useWindowDimensions from './useWindowDimensions';
+import useWindowDimensions from '../hooks/useWindowDimensions';
 import RMCMap from '../assets/RMCMap.png'
 
 
