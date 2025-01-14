@@ -7,7 +7,7 @@ import pfp4 from '../assets/pfp4.avif'
 function Team() {
     return (
         <>
-            <div className='team-title'><h2>Our Team</h2></div>
+            <h2 className='team-title'>Our Team</h2>
             <div className='team-container'>
                 <div>
                     <img src={pfp1}></img>

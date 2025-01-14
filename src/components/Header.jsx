@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import '../styles/Header.css'
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 
 function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -21,14 +21,14 @@ function Header() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const handleLinkClick = (page) => {
+    const handleLinkClick = useCallback((page) => {
         setActivePage(page);
         setIsMenuOpen(false);
-    };
+    }, []);
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+    const toggleMenu = useCallback(() => {
+        setIsMenuOpen(prev => !prev);
+    }, []);
 
 
     return (
