@@ -9,7 +9,7 @@
     align-items: stretch;
 }
 
-.team-container>div>img {
+.person-info img {
     display: block;
     height: auto;
     width: 100%;
@@ -18,9 +18,10 @@
     border-radius: 50%;
     margin: 1rem auto;
     padding: 5px;
+    transition: 0.3s ease-in-out;
 }
 
-.team-container>div {
+.person-info {
     text-align: center;
     width: 100%;
     max-width: 300px;
@@ -28,6 +29,15 @@
     background-color: #5E605A;
     border-radius: 5px;
     margin: 0 auto;
+    transition: 0.3s ease-in-out;
+}
+
+.person-info:hover{
+    box-shadow: 0px 7px 13px -7px #000000;
+    cursor: pointer;
+    img{
+        padding: 0;
+    }
 }
 
 .team-title {
@@ -61,6 +71,15 @@
     width: fit-content;
     font-size: medium !important;
     margin-bottom: 1rem;
+}
+
+.overlay{
+    display: flex;
+    height: 100vh;
+    width: 100vh;
+    background-color: #000000;
+    opacity: 0.5;
+    align-items: center;
 }
 
 @media (max-width: 1079px) {

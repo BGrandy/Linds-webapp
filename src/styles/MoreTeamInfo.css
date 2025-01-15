@@ -1,0 +1,40 @@
+.moreInfo{
+    width: 100%;
+    max-width: 800px;
+    background-color: #5E605A;
+    height: 90%;
+    margin: 0 auto;
+    margin-top: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+.moreInfo > h2 {
+    margin-left: 10px;
+}
+
+.moreInfo-Struct{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.moreInfo-Struct>div{
+    margin-left: 10px;
+}
+
+.nameStruct {
+    text-decoration: underline;
+    font-size: 25px;
+}
+
+.moreInfo-Struct>img{
+    display: block;
+    height: auto;
+    max-height: 250px;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin: 1rem auto;
+    padding: 5px;
+}
+
