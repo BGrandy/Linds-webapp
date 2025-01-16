@@ -4,9 +4,11 @@ import useWindowDimensions from '../hooks/useWindowDimensions';
 import RMCMap from '../assets/RMCMap.png'
 import { useCallback, useEffect } from 'react';
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-//import { contain } from 'three/src/extras/TextureUtils.js';
+import { GLTFLoader } from 'three/examples/jsm/Addons.js';
+import { FontLoader } from 'three/addons/loaders/FontLoader.js';
+import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
+
 
 
 function LandingPage() {
@@ -78,6 +80,45 @@ function LandingPage() {
                 console.log('An error happened ' + error);
             }
         );
+
+
+        const textLoader = new FontLoader();
+        textLoader.load(`/fonts/Roboto_Regular.json`, function (Font) {
+            const geometry = new TextGeometry('The Grandy Lab The Grandy Lab The Grandy Lab The Grandy Lab The Grandy Lab The Grandy Lab The Grandy Lab The Grandy Lab', {
+                font: Font,
+                size: 7.8,
+                depth: 0,
+
+            });
+
+            // Bend the text geometry into a concave shape
+            const radius = 100;
+            const positionAttribute = geometry.attributes.position;
+
+            for (let i = 0; i < positionAttribute.count; i++) {
+                const x = positionAttribute.getX(i);
+                const z = positionAttribute.getZ(i);
+
+                const theta = (x / radius);
+                const newX = Math.sin(theta) * radius;
+                const newZ = -Math.cos(theta) * radius - radius;
+
+                positionAttribute.setX(i, newX);
+                positionAttribute.setZ(i, z + newZ);
+            }
+
+
+            const textMesh = new THREE.Mesh(geometry, [
+                new THREE.MeshPhongMaterial({ color: 0x000000 }), //front
+                new THREE.MeshPhongMaterial({ color: 0x000000 }) //side
+            ])
+            textMesh.position.set(0,25,100);
+            scene.add(textMesh);
+        });
+
+
+
+
         const controls = new OrbitControls(camera, renderer.domElement);
         camera.position.z = 7;
 
@@ -177,7 +218,6 @@ function LandingPage() {
                     '--dynamic-height': `${height}px`,
                 }}>
                 <div className='content'>
-                    <h1>The Grandy Lab</h1>
                     <a className='arrow' onClick={handleClick}>↓</a>
                 </div>
             </section>
