@@ -2,11 +2,10 @@ import '../styles/LandingPage.css'
 import { Link } from 'react-router-dom';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 import RMCMap from '../assets/RMCMap.png'
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { useEffect } from 'react';
 
 
 function LandingPage() {
@@ -17,13 +16,35 @@ function LandingPage() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
+
+
+    useEffect(() => {
+        let previousScrollY = 0;
+    
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+    
+            if (currentScrollY <= 500 && currentScrollY < previousScrollY) {
+                window.scrollTo(0, 0);
+            }
+    
+            previousScrollY = currentScrollY;
+        };
+    
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+    
+
+
+
     useEffect(() => {
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         const canvas = document.getElementById('container3D');
 
         const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
-        renderer.setSize(window.innerWidth-17, window.innerHeight);
+        renderer.setSize(window.innerWidth - 17, window.innerHeight);
 
         renderer.shadowMap.enabled = true;
         renderer.shadowMap.type = THREE.BasicShadowMap;
@@ -116,7 +137,7 @@ function LandingPage() {
         window.addEventListener('resize', () => {
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth-17, window.innerHeight);
+            renderer.setSize(window.innerWidth - 17, window.innerHeight);
         });
     }, []);
 
