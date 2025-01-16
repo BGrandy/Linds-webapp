@@ -6,6 +6,7 @@ import { useCallback, useEffect } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+//import { contain } from 'three/src/extras/TextureUtils.js';
 
 
 function LandingPage() {
@@ -20,36 +21,39 @@ function LandingPage() {
 
     useEffect(() => {
         let previousScrollY = 0;
-    
+
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
-    
+
             if (currentScrollY <= 500 && currentScrollY < previousScrollY) {
                 window.scrollTo(0, 0);
             }
-    
+
             previousScrollY = currentScrollY;
         };
-    
+
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
-    
+
 
 
 
     useEffect(() => {
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const canvas = document.getElementById('container3D');
+        const container = document.getElementById('container3D');
+        const renderer = new THREE.WebGLRenderer({ alpha: true });
 
-        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
         renderer.setSize(window.innerWidth - 17, window.innerHeight);
-
         renderer.shadowMap.enabled = true;
         renderer.shadowMap.type = THREE.BasicShadowMap;
 
-        document.body.appendChild(renderer.domElement);
+        if (!container) {
+            console.error("Container element not found");
+            return;
+        }
+        container.appendChild(renderer.domElement);
 
         let object;
         const loader = new GLTFLoader();
@@ -139,7 +143,32 @@ function LandingPage() {
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth - 17, window.innerHeight);
         });
+
+        return () => {
+            console.log(scene);
+            // Cleanup Three.js resources
+            scene.traverse((object) => {
+                if (object.isMesh) {
+                    object.geometry.dispose();
+
+                    if (Array.isArray(object.material)) {
+                        object.material.forEach((material) => material.dispose());
+                    } else {
+                        object.material.dispose();
+                    }
+                }
+            });
+
+            if (renderer.domElement && renderer.domElement.parentNode) {
+                renderer.domElement.parentNode.removeChild(renderer.domElement);
+            }
+
+            renderer.dispose();
+            scene.clear();
+        };
     }, []);
+
+
 
     return (
         <>
@@ -152,9 +181,7 @@ function LandingPage() {
                     <a className='arrow' onClick={handleClick}>↓</a>
                 </div>
             </section>
-            <div>
-                <canvas id='container3D' />
-            </div>
+            <div id="container3D" />
             <section className='about-us'>
                 <div className='info'>
                     <h1>About Us</h1>
