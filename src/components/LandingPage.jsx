@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 import RMCMap from '../assets/RMCMap.png'
 import { useCallback } from 'react';
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { useEffect } from 'react';
 
 
 function LandingPage() {
@@ -10,13 +14,115 @@ function LandingPage() {
 
     const handleClick = useCallback(() => {
         window.scrollTo(0, height);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-    
+
+    useEffect(() => {
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const canvas = document.getElementById('container3D');
+
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+        renderer.setSize(window.innerWidth-17, window.innerHeight);
+
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.BasicShadowMap;
+
+        document.body.appendChild(renderer.domElement);
+
+        let object;
+        const loader = new GLTFLoader();
+
+        loader.load(
+            `/models/spAtom/scene.gltf`,
+            function (gltf) {
+                object = gltf.scene;
+                object.scale.set(0.1, 0.1, 0.1); // Scale down model for easier management
+
+                gltf.scene.traverse(function (node) {
+                    if (node.isMesh) { node.castShadow = true; }
+                });
+
+                scene.add(object);
+                console.log('Model loaded successfully');
+            },
+            function (xhr) {
+                console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+            },
+            function (error) {
+                console.log('An error happened ' + error);
+            }
+        );
+        const controls = new OrbitControls(camera, renderer.domElement);
+        camera.position.z = 7;
+
+        var meshFloor;
+        meshFloor = new THREE.Mesh(
+            new THREE.PlaneGeometry(50, 50, 100, 100),
+            new THREE.MeshPhongMaterial({ color: 0x3D3D3D, wireframe: false })
+        );
+        meshFloor.rotation.x -= Math.PI / 2;
+        meshFloor.position.y -= 3;
+        meshFloor.receiveShadow = true;
+        scene.add(meshFloor)
+
+        scene.add(new THREE.AmbientLight(0xffffff));
+
+        const spotLight = new THREE.SpotLight(0xffffff, 60);
+        spotLight.angle = Math.PI / 5;
+        spotLight.penumbra = 0.2;
+        spotLight.position.set(2, 3, 3);
+        spotLight.castShadow = true;
+
+        spotLight.shadow.camera.near = 1;
+        spotLight.shadow.camera.far = 20;
+
+        spotLight.shadow.camera.right = 3;
+        spotLight.shadow.camera.left = - 3;
+        spotLight.shadow.camera.top = 3;
+        spotLight.shadow.camera.bottom = - 3;
+
+        spotLight.shadow.mapSize.width = 1024;
+        spotLight.shadow.mapSize.height = 1024;
+        scene.add(spotLight);
+
+        const dirLight = new THREE.DirectionalLight(0xffffff, 1.5);
+        dirLight.position.set(0, 4, 0);
+        dirLight.castShadow = true;
+        dirLight.shadow.camera.near = 1;
+        dirLight.shadow.camera.far = 10;
+
+        dirLight.shadow.camera.right = 3;
+        dirLight.shadow.camera.left = - 3;
+        dirLight.shadow.camera.top = 3;
+        dirLight.shadow.camera.bottom = - 3;
+
+        dirLight.shadow.mapSize.width = 1024;
+        dirLight.shadow.mapSize.height = 1024;
+        scene.add(dirLight);
+
+
+        function animate() {
+            if (object) {
+                object.rotation.x += 0.01;
+                object.rotation.y += 0.01;
+            }
+            controls.update();
+            renderer.render(scene, camera);
+        }
+
+        renderer.setAnimationLoop(animate);
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth-17, window.innerHeight);
+        });
+    }, []);
+
     return (
         <>
             <section
-                className='hero'
                 style={{
                     '--dynamic-height': `${height}px`,
                 }}>
@@ -25,6 +131,9 @@ function LandingPage() {
                     <a className='arrow' onClick={handleClick}>↓</a>
                 </div>
             </section>
+            <div>
+                <canvas id='container3D' />
+            </div>
             <section className='about-us'>
                 <div className='info'>
                     <h1>About Us</h1>

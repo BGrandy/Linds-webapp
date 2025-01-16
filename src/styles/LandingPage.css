@@ -6,25 +6,25 @@
 
 }
 
-.hero {
-    width: 100%;
-    height: var(--dynamic-height);
-    background-image: url('../assets/endohedralfullerene.png');
+#container3D {
+    position: absolute;
+    top: 0;
+    left: 0;
     background-color: #5E605A;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
+  }
+
 
 .content {
+    position: relative;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: fit-content;
     width: 100%;
     height: var(--dynamic-height);
     align-items: center;
     justify-content: space-between;
+    z-index: 1;
 }
 
 .content h1 {

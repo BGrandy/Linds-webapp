@@ -1,0 +1,11 @@
+Model Information:
+* title:	Science Project, the Atom
+* source:	https://sketchfab.com/3d-models/science-project-the-atom-1be1b5622d90459596ba4ac340ad1eea
+* author:	superdancraft (https://sketchfab.com/superdancraft)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Science Project, the Atom" (https://sketchfab.com/3d-models/science-project-the-atom-1be1b5622d90459596ba4ac340ad1eea) by superdancraft (https://sketchfab.com/superdancraft) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
