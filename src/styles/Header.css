@@ -81,6 +81,13 @@
     cursor: pointer;
     z-index: 11;
     display: none;
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.burger.hidden{
+    opacity: 0;
+    transform: translateY(-200%);
 }
 
 .burger input {

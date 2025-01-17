@@ -37,25 +37,26 @@ function Header() {
             <header className={`header ${isScrolled ? 'hidden' : `${isMenuOpen ? 'show' : ''}`}`}>
                 <nav>
                     <ul>
-                        {['/', '/Research', '/Publications', '/Team'].map((path) =>(
+                        {['/', '/Research', '/Publications', '/Team'].map((path) => (
                             <li key={path}><Link to={path}
-                            className={activePage === path ? 'active' : ''}
-                            onClick={() => handleLinkClick({path})}>
-                            {path === '/' ? 'Home' : path.slice(1)}
+                                className={activePage === path ? 'active' : ''}
+                                onClick={() => handleLinkClick({ path })}>
+                                {path === '/' ? 'Home' : path.slice(1)}
                             </Link></li>
                         ))}
                     </ul>
                 </nav>
             </header>
-            <label
-                className={`burger ${isMenuOpen ? 'white' : ''}`}
-                htmlFor="burger">
-                <input type="checkbox" id="burger" onChange={toggleMenu} checked={isMenuOpen} />
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-
+            <div>
+                <label
+                    className={`burger ${isScrolled ? 'hidden' : isMenuOpen ? 'white' : ''}`}
+                    htmlFor="burger">
+                    <input type="checkbox" id="burger" onChange={toggleMenu} checked={isMenuOpen} />
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
         </>
     )
 }
