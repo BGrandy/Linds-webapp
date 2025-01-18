@@ -11,7 +11,7 @@
     top: 0;
     left: 0;
     background-color: #5E605A;
-  }
+}
 
 
 .content {
@@ -119,10 +119,18 @@
     background-color: #5E605A;
 }
 
+@media (max-width: 1000px){
+    .info {
+        width: 90%;
+    }
+}
+
 @media (max-width: 600px) {
     p {
         width: 100%;
     }
+
+    
 
     .contactus-img {
         width: 100%;
@@ -136,7 +144,7 @@
         left: 5px;
     }
 
-    .content > .arrow {
+    .content>.arrow {
         position: absolute;
         bottom: 5px;
     }
