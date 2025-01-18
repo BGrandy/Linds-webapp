@@ -1,6 +1,4 @@
-body.no-scroll{
-    overflow: hidden;
-}
+
 
 .team-container {
     display: grid;
@@ -100,5 +98,8 @@ body.no-scroll{
 @media (max-width: 1079px) {
     .team-title {
         padding-top: 30px;
+    }
+    body.no-scroll{
+        overflow: hidden;
     }
 }
