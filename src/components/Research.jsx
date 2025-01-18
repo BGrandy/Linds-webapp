@@ -38,7 +38,7 @@ function Research() {
             <div className="research">
                 <div className='research-info'>
                     <h2>Research</h2>
-                    <p>We want to  gain a fundamental understanding of radiation-induce degradation of  metals. We study materials relevant to the nuclear industry, including  copper and stainless steels, using state-of-the-art scanning  electrochemical probes. We have unique access to highly ionizing  radiation with the SLOWPOKE-2 nuclear reactor.</p>
+                    <p>We want to gain a fundamental understanding of radiation-induced degradation of metals. We study materials relevant to the nuclear industry, including  copper and stainless steels, using state-of-the-art scanning electrochemical probes. We have unique access to highly ionizing radiation with the SLOWPOKE-2 nuclear reactor.</p>
                 </div>
                 <div className='research-card'>
                     {researchTopics.map((topic) =>

@@ -1,0 +1,455 @@
+{
+  "accessors": [
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 4800,
+      "max": [
+        3.804409980773926,
+        5.167540073394775,
+        2.6463499069213867
+      ],
+      "min": [
+        -2.1641600131988525,
+        -1.0,
+        -2.7360498905181885
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 57600,
+      "componentType": 5126,
+      "count": 4800,
+      "max": [
+        0.9920772314071655,
+        0.9435210227966309,
+        0.943524956703186
+      ],
+      "min": [
+        -0.9920772314071655,
+        -0.9435210227966309,
+        -0.943524956703186
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 4800,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 115200,
+      "componentType": 5126,
+      "count": 4800,
+      "max": [
+        0.9510599970817566,
+        1.8480700254440308,
+        2.137320041656494
+      ],
+      "min": [
+        -5.188169956207275,
+        -3.7586100101470947,
+        -3.602260112762451
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 172800,
+      "componentType": 5126,
+      "count": 4800,
+      "max": [
+        0.9920772314071655,
+        0.9435210227966309,
+        0.943524956703186
+      ],
+      "min": [
+        -0.9920772314071655,
+        -0.9435210227966309,
+        -0.943524956703186
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 19200,
+      "componentType": 5125,
+      "count": 4800,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 230400,
+      "componentType": 5126,
+      "count": 9216,
+      "max": [
+        4.494540214538574,
+        2.878740072250366,
+        3.893939971923828
+      ],
+      "min": [
+        -4.494540214538574,
+        -2.878740072250366,
+        -3.893939971923828
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 340992,
+      "componentType": 5126,
+      "count": 9216,
+      "max": [
+        1.0,
+        1.0,
+        0.9999963641166687
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -0.9999964833259583
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 38400,
+      "componentType": 5125,
+      "count": 55296,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 451584,
+      "componentType": 5126,
+      "count": 4800,
+      "max": [
+        0.9829199910163879,
+        9.245590209960938,
+        10.523070335388184
+      ],
+      "min": [
+        -45.843101501464844,
+        -25.83441925048828,
+        -10.372079849243164
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 509184,
+      "componentType": 5126,
+      "count": 4800,
+      "max": [
+        0.9920772314071655,
+        0.9435210227966309,
+        0.943524956703186
+      ],
+      "min": [
+        -0.9920772314071655,
+        -0.9435210227966309,
+        -0.943524956703186
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 259584,
+      "componentType": 5125,
+      "count": 4800,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "superdancraft (https://sketchfab.com/superdancraft)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/science-project-the-atom-1be1b5622d90459596ba4ac340ad1eea",
+      "title": "Science Project, the Atom"
+    },
+    "generator": "Sketchfab-12.68.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 278784,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 566784,
+      "byteOffset": 278784,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 845568,
+      "uri": "scene.bin"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "BezierCircle",
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.2
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Material.003",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.0,
+          0.014132700860500336,
+          1.0,
+          1.0
+        ],
+        "roughnessFactor": 0.20000000298023224
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Material.004",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1.0,
+          0.0026864903047680855,
+          0.0,
+          1.0
+        ],
+        "roughnessFactor": 0.20000000298023224
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Material.002",
+      "pbrMetallicRoughness": {
+        "roughnessFactor": 0.20000000298023224
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Neutrons",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0
+          },
+          "indices": 2,
+          "material": 3,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Protons",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 4,
+            "POSITION": 3
+          },
+          "indices": 5,
+          "material": 2,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "BezierCircle",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 7,
+            "POSITION": 6
+          },
+          "indices": 8,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Electrons",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 10,
+            "POSITION": 9
+          },
+          "indices": 11,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2,
+        4,
+        6,
+        8
+      ],
+      "name": "Root"
+    },
+    {
+      "children": [
+        3
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        -2.04809,
+        -1.7402900000000001,
+        -0.24724000000000004,
+        1.0
+      ],
+      "name": "Neutrons"
+    },
+    {
+      "mesh": 0,
+      "name": "Neutrons"
+    },
+    {
+      "children": [
+        5
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.8217900000000001,
+        1.13736,
+        -0.07437,
+        1.0
+      ],
+      "name": "Protons"
+    },
+    {
+      "mesh": 1,
+      "name": "Protons"
+    },
+    {
+      "children": [
+        7
+      ],
+      "matrix": [
+        -6.1541299999999985,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -6.1541299999999985,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -6.1541299999999985,
+        0.0,
+        -0.90532,
+        0.9078,
+        0.036860000000000004,
+        1.0
+      ],
+      "name": "BezierCircle"
+    },
+    {
+      "mesh": 2,
+      "name": "BezierCircle"
+    },
+    {
+      "children": [
+        9
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        26.29057,
+        9.58713,
+        -0.16764000000000004,
+        1.0
+      ],
+      "name": "Electrons"
+    },
+    {
+      "mesh": 3,
+      "name": "Electrons"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}

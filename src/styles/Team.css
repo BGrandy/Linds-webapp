@@ -1,3 +1,5 @@
+
+
 .team-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -9,7 +11,7 @@
     align-items: stretch;
 }
 
-.team-container>div>img {
+.person-info img {
     display: block;
     height: auto;
     width: 100%;
@@ -18,9 +20,10 @@
     border-radius: 50%;
     margin: 1rem auto;
     padding: 5px;
+    transition: 0.3s ease-in-out;
 }
 
-.team-container>div {
+.person-info {
     text-align: center;
     width: 100%;
     max-width: 300px;
@@ -28,6 +31,15 @@
     background-color: #5E605A;
     border-radius: 5px;
     margin: 0 auto;
+    transition: 0.3s ease-in-out;
+}
+
+.person-info:hover{
+    box-shadow: 0px 7px 13px -7px #000000;
+    cursor: pointer;
+    img{
+        padding: 0;
+    }
 }
 
 .team-title {
@@ -63,8 +75,31 @@
     margin-bottom: 1rem;
 }
 
+.more-overlay{
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 20;
+}
+
+.more-overlay.visible {
+    visibility: visible;
+    opacity: 1;
+    
+}
+
+
 @media (max-width: 1079px) {
     .team-title {
         padding-top: 30px;
+    }
+    body.no-scroll{
+        overflow: hidden;
     }
 }
