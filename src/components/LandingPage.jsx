@@ -90,7 +90,7 @@ function LandingPage() {
         textLoader.load(`/fonts/Roboto_Regular.json`, function (Font) {
             const geometry = new TextGeometry('The Grandy Lab The Grandy Lab The Grandy Lab The Grandy Lab The Grandy Lab The Grandy Lab The Grandy Lab The Grandy Lab', {
                 font: Font,
-                size: 7.8,
+                size: 7.84,
                 depth: 0,
 
             });
@@ -116,7 +116,7 @@ function LandingPage() {
                 new THREE.MeshPhongMaterial({ color: 0x000000 }), //front
                 new THREE.MeshPhongMaterial({ color: 0x000000 }) //side
             ])
-            textMesh.position.set(0,25,100);
+            textMesh.position.set(0,50,100);
             scene.add(textMesh);
         });
 
