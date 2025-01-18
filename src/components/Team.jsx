@@ -15,18 +15,18 @@ const teamInfo = [
             Principal Investigator</>),
         moreTitle: 'Principal Investigator',
         moreContent: (<><p style={{ fontWeight: 'bold' }}>About Lindsay</p>
-            <p style={{fontSize: '16px'}}>Assistant Professor at RMC in the Department of Chemistry and Chemical Engineering and the SLOWPOKE-2 Nuclear Reactor Manager
+            <p style={{ fontSize: '16px' }}>Assistant Professor at RMC in the Department of Chemistry and Chemical Engineering and the SLOWPOKE-2 Nuclear Reactor Manager
                 in training with research interests in materials degradation, localized electrochemistry, surface analysis, and radiation-induced processes.
                 Personal research motivation is to ensure we can lean on nuclear energy during the transition to a sustainable green-energy society and a fundamental
                 interest in ionizing radiation. I also have a vested interest in understanding and improving EDI in STEM in universities and in the workforce</p>
             <p style={{ fontWeight: 'bold' }}>Teaching</p>
-            <p style={{fontSize: '16px'}}>CCE101 Introductory Chemistry</p>
+            <p style={{ fontSize: '16px' }}>CCE101 Introductory Chemistry</p>
             <p style={{ fontWeight: 'bold' }}>Education</p>
-            <p style={{fontSize: '16px'}}>Post-Doctoral Fellow (McGill University, 2021-2023, Janine Mauzeroll)<br />
+            <p style={{ fontSize: '16px' }}>Post-Doctoral Fellow (McGill University, 2021-2023, Janine Mauzeroll)<br />
                 Ph.D. (Western University, 2021, Jungsook Clara Wren) <br />
                 B.Sc. (Wilfrid Laurier University, 2015)</p>
             <p style={{ fontWeight: 'bold' }}>Contact</p>
-            <p style={{fontSize: '16px'}}>Email: lindsay.grandy@rmc.ca <br />
+            <p style={{ fontSize: '16px' }}>Email: lindsay.grandy@rmc.ca <br />
                 Phone: (613) 541-6000 ext. 6989<br />
                 Office: Sawyer Mod 5, Room 2517<br />
                 LinkedIn: https://www.linkedin.com/in/lindsaygrandy/</p><br /></>),
@@ -56,7 +56,17 @@ function Team() {
     const [selectedPerson, setSelectedPerson] = useState(null);
 
     const handleTeamClick = useCallback((person = null) => {
-        setOverlayVisible(prev => !prev);
+        setOverlayVisible((prev) => {
+            const newOverlayVisible = !prev;
+
+            if (newOverlayVisible) {
+                document.body.classList.add('no-scroll');
+            } else {
+                document.body.classList.remove('no-scroll');
+            }
+
+            return newOverlayVisible;
+        });
         if (person) {
             setSelectedPerson(person)
         }
@@ -83,7 +93,7 @@ function Team() {
                     <h4>OCdt Liam Howlett</h4>
                     <p>, Summer Intern 2024</p> </div>
             </div>
-            <div className={`overlay  ${overlayVisible ? 'visible' : ''}`} onClick={() => handleTeamClick()}>
+            <div className={`more-overlay  ${overlayVisible ? 'visible' : ''}`} onClick={() => handleTeamClick()}>
                 <MoreTeamInfo visible={overlayVisible} person={selectedPerson} />
             </div>
         </>
