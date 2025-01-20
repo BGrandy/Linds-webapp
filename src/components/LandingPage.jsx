@@ -13,11 +13,25 @@ function LandingPage() {
     const { height } = useWindowDimensions();
 
     const handleClick = useCallback(() => {
-        window.scrollTo(0, height);
+        window.scrollTo({ top: height});
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     useEffect(() => {
+        // Dynamically set the viewport meta tag
+        const viewportMeta = document.querySelector("meta[name=viewport]");
+        if (viewportMeta) {
+            viewportMeta.setAttribute(
+                "content",
+                `width=device-width, user-scalable=no, initial-scale=${1 / window.devicePixelRatio}`
+            );
+        } else {
+            const meta = document.createElement("meta");
+            meta.name = "viewport";
+            meta.content = `width=device-width, user-scalable=no, initial-scale=${1 / window.devicePixelRatio}`;
+            document.head.appendChild(meta);
+        }
+
         let previousScrollY = 0;
 
         //causing lag on mobile force wait after call.
@@ -25,11 +39,7 @@ function LandingPage() {
             const currentScrollY = window.scrollY;
 
             if (currentScrollY <= 500 && currentScrollY < previousScrollY) {
-                window.scrollTo({ top: 0, behavior: "smooth" });
-                // Wait after the scroll
-                setTimeout(() => {
-                    console.log("Wait finished after scrolling to top.");
-                }, 1000);
+                window.scrollTo({ top: 0 });
             }
             previousScrollY = currentScrollY;
         };
