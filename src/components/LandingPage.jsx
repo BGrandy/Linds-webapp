@@ -19,26 +19,24 @@ function LandingPage() {
 
     useEffect(() => {
         let previousScrollY = 0;
-        let timeout;
 
-        //caused lag on mobile instead using debounce.
+        //causing lag on mobile force wait after call.
         const handleScroll = () => {
-            clearTimeout(timeout); 
-            timeout = setTimeout(() => {
-                const currentScrollY = window.scrollY;
+            const currentScrollY = window.scrollY;
 
-                if (currentScrollY <= 500 && currentScrollY < previousScrollY) {
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                }
-                previousScrollY = currentScrollY;
-            }, 100); // Delay for debounce
+            if (currentScrollY <= 500 && currentScrollY < previousScrollY) {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                // Wait after the scroll
+                setTimeout(() => {
+                    console.log("Wait finished after scrolling to top.");
+                }, 1000);
+            }
+            previousScrollY = currentScrollY;
         };
 
         window.addEventListener("scroll", handleScroll, { passive: true });
-        return () => {
-            clearTimeout(timeout); 
-            window.removeEventListener("scroll", handleScroll);
-        }
+        return () => window.removeEventListener("scroll", handleScroll);
+
     }, []);
 
 
