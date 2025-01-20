@@ -13,25 +13,11 @@ function LandingPage() {
     const { height } = useWindowDimensions();
 
     const handleClick = useCallback(() => {
-        window.scrollTo({ top: height});
+        window.scrollTo({ top: height, behavior: 'smooth' });
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     useEffect(() => {
-        // Dynamically set the viewport meta tag
-        const viewportMeta = document.querySelector("meta[name=viewport]");
-        if (viewportMeta) {
-            viewportMeta.setAttribute(
-                "content",
-                `width=device-width, user-scalable=no, initial-scale=${1 / window.devicePixelRatio}`
-            );
-        } else {
-            const meta = document.createElement("meta");
-            meta.name = "viewport";
-            meta.content = `width=device-width, user-scalable=no, initial-scale=${1 / window.devicePixelRatio}`;
-            document.head.appendChild(meta);
-        }
-
         let previousScrollY = 0;
 
         //causing lag on mobile force wait after call.
