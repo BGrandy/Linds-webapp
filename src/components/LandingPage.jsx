@@ -13,31 +13,28 @@ function LandingPage() {
     const { height } = useWindowDimensions();
 
     const handleClick = useCallback(() => {
-        window.scrollTo(0, height);
+        window.scrollTo({ top: height, behavior: 'smooth' });
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     useEffect(() => {
         let previousScrollY = 0;
 
-        //window.ScrollToY caused lag on mobile instead using scrollIntoView.
+        //causing lag on mobile force wait after call.
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
+            const scrollThreshold = window.innerWidth < 600 ? 100 : 500;
 
-            if (currentScrollY <= 500 && currentScrollY < previousScrollY) {
-                const targetElement = document.getElementById("container3D");
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: "smooth",
-                    });
-                }
+            // Check scroll position and direction
+            if (currentScrollY <= scrollThreshold && currentScrollY < previousScrollY) {
+                window.scrollTo({ top: 0 });
             }
-
             previousScrollY = currentScrollY;
         };
 
-        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
+
     }, []);
 
 

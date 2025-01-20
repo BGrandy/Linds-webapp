@@ -150,4 +150,8 @@
         position: absolute;
         bottom: 5px;
     }
+
+    *{
+        scroll-behavior: initial;
+    }
 }
