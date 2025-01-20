@@ -23,8 +23,10 @@ function LandingPage() {
         //causing lag on mobile force wait after call.
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
+            const scrollThreshold = window.innerWidth < 600 ? 100 : 500;
 
-            if (currentScrollY <= 500 && currentScrollY < previousScrollY) {
+            // Check scroll position and direction
+            if (currentScrollY <= scrollThreshold && currentScrollY < previousScrollY) {
                 window.scrollTo({ top: 0 });
             }
             previousScrollY = currentScrollY;
