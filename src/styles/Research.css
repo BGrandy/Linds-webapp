@@ -51,10 +51,11 @@ h4 {
 
 @media (max-width: 1079px) {
 
-    h2,
-    p {
-        text-align: center;
+    .imgStruct{
+        margin-right: 0;;
     }
+
+    
 
     .research {
         flex-direction: column;
@@ -67,8 +68,11 @@ h4 {
         align-items: center;
         text-align: center;
     }
-
-    .research-info {
-        margin-right: 0px;
+    
+    .research-card, .research-info{
+        margin: 0;
+        width: 90%;
+        text-align: center;
     }
+
 }

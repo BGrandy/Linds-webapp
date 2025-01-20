@@ -15,6 +15,7 @@
   }
 
 
+
 .content {
     margin: 0 auto;
     max-width: fit-content;
@@ -120,10 +121,18 @@
     background-color: #5E605A;
 }
 
+@media (max-width: 1000px){
+    .info {
+        width: 90%;
+    }
+}
+
 @media (max-width: 600px) {
     p {
         width: 100%;
     }
+
+    
 
     .contactus-img {
         width: 100%;
@@ -137,7 +146,7 @@
         left: 5px;
     }
 
-    .content > .arrow {
+    .content>.arrow {
         position: absolute;
         bottom: 5px;
     }
