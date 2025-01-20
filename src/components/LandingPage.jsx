@@ -19,25 +19,26 @@ function LandingPage() {
 
     useEffect(() => {
         let previousScrollY = 0;
+        let timeout;
 
-        //window.ScrollToY caused lag on mobile instead using scrollIntoView.
+        //caused lag on mobile instead using debounce.
         const handleScroll = () => {
-            const currentScrollY = window.scrollY;
+            clearTimeout(timeout); 
+            timeout = setTimeout(() => {
+                const currentScrollY = window.scrollY;
 
-            if (currentScrollY <= 500 && currentScrollY < previousScrollY) {
-                const targetElement = document.getElementById("container3D");
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: "smooth",
-                    });
+                if (currentScrollY <= 500 && currentScrollY < previousScrollY) {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
                 }
-            }
-
-            previousScrollY = currentScrollY;
+                previousScrollY = currentScrollY;
+            }, 100); // Delay for debounce
         };
 
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => {
+            clearTimeout(timeout); 
+            window.removeEventListener("scroll", handleScroll);
+        }
     }, []);
 
 
