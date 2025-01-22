@@ -11,10 +11,11 @@
 
 .grid-container > div > img{
     display: flex;
-    width: 200px;
-    height: 100px;
+    width: 300px;
+    height: 400px;
     margin: 1rem auto;
     padding: 5px;
+    border-radius: 15px;
 }
 
 .grid-container > div{
@@ -22,8 +23,6 @@
     width: 100%; 
     max-width: 300px; 
     height: auto; 
-    /* background-color: #5E605A; */
-    border-radius: 5px;
     margin: 0 auto;
 }
 
@@ -59,7 +58,6 @@
 
 .grid-container a{
     all: inherit;
-    height: auto;
 }
 .grid-container a:hover{
     all: inherit;

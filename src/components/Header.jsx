@@ -40,7 +40,7 @@ function Header() {
                         {['/', '/Research', '/Publications', '/Team'].map((path) => (
                             <li key={path}><Link to={path}
                                 className={activePage === path ? 'active' : ''}
-                                onClick={() => handleLinkClick({ path })}>
+                                onClick={() => handleLinkClick(path)}>
                                 {path === '/' ? 'Home' : path.slice(1)}
                             </Link></li>
                         ))}
