@@ -72,7 +72,10 @@ function Research() {
             <div className='research-card'>
                 {researchTopics.map((topic, index) =>
                     <div className='research-panel' key={index} onClick={() => handleResearchClick(index)}>
-                        <h3 className='research-title'>{topic.title}</h3>
+                        <div className='researchTitle-struct'>
+                            <h3 className='research-title'>{topic.title}</h3>
+                            <div className={`chevron ${visibleIndex === index ? 'down' : ''}`}/>
+                        </div>
                         <div className={`research-content ${visibleIndex === index ? 'open' : ''}`}>
                             <img src={topic.img} className='imgStruct' alt={topic.title}></img>
                             {topic.content}
