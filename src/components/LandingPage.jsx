@@ -4,7 +4,7 @@ import useWindowDimensions from '../hooks/useWindowDimensions';
 import RMCMap from '../assets/RMCMap.png'
 import { useCallback, useEffect } from 'react';
 import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+//import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/Addons.js';
 
 
@@ -113,7 +113,7 @@ function LandingPage() {
 
 
         //creates user interactions
-        const controls = new OrbitControls(camera, renderer.domElement);
+        //const controls = new OrbitControls(camera, renderer.domElement);
         camera.position.z = 7;
 
         //creates floor
@@ -170,8 +170,8 @@ function LandingPage() {
                 object.rotation.y += 0.01;
             }
             let t = clock.getDelta();
-            textTexture.offset.x += t * -0.125;
-            controls.update();
+            textTexture.offset.x += t * 0.125;
+            //controls.update();
             renderer.render(scene, camera);
         }
 
