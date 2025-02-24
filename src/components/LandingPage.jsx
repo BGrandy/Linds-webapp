@@ -17,25 +17,25 @@ function LandingPage() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    useEffect(() => {
-        let previousScrollY = 0;
+    // useEffect(() => {
+    //     let previousScrollY = 0;
 
-        //causing lag on mobile force wait after call.
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY;
-            const scrollThreshold = window.innerWidth < 600 ? 100 : 500;
+    //     //causing lag on mobile force wait after call.
+    //     const handleScroll = () => {
+    //         const currentScrollY = window.scrollY;
+    //         const scrollThreshold = window.innerWidth < 600 ? 100 : 500;
 
-            // Check scroll position and direction
-            if (currentScrollY <= scrollThreshold && currentScrollY < previousScrollY) {
-                window.scrollTo({ top: 0 });
-            }
-            previousScrollY = currentScrollY;
-        };
+    //         // Check scroll position and direction
+    //         if (currentScrollY <= scrollThreshold && currentScrollY < previousScrollY) {
+    //             window.scrollTo({ top: 0 });
+    //         }
+    //         previousScrollY = currentScrollY;
+    //     };
 
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        return () => window.removeEventListener("scroll", handleScroll);
+    //     window.addEventListener("scroll", handleScroll, { passive: true });
+    //     return () => window.removeEventListener("scroll", handleScroll);
 
-    }, []);
+    // }, []);
 
 
 
@@ -46,6 +46,7 @@ function LandingPage() {
         const container = document.getElementById('container3D');
         const renderer = new THREE.WebGLRenderer({ alpha: true });
         let adjustment = window.innerWidth < 600 ? 0 : 17;
+        scene.background = new THREE.Color(0xd3d3d3);
 
         renderer.setSize(window.innerWidth - adjustment, window.innerHeight);
         renderer.shadowMap.enabled = true;
@@ -84,7 +85,7 @@ function LandingPage() {
         canvas.width = 1024;
         canvas.height = 96;
         const ctx = canvas.getContext('2d');
-        ctx.fillStyle = 'magenta';
+        ctx.fillStyle = '#734F96';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.clearRect(0, 10, canvas.width, canvas.height - 20);
         ctx.textBaseline = 'middle';
@@ -213,14 +214,9 @@ function LandingPage() {
 
     return (
         <>
-            <section
-                style={{
-                    '--dynamic-height': `${height}px`,
-                }}>
                 <div className='content'>
                     <a className='arrow' onClick={handleClick}>↓</a>
                 </div>
-            </section>
             <div id="container3D" />
             <section className='about-us'>
                 <div className='info'>
