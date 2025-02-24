@@ -6,11 +6,10 @@
 
 }
 
-#container3D {
+#conatainer3D {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #5E605A;
     border-bottom: 1px solid black;
   }
 
@@ -48,7 +47,7 @@
 }
 
 .about-us {
-    background-color: #5E605A;
+    background-color: lightgrey;
     width: 100%;
 }
 
@@ -112,13 +111,13 @@
 .email {
     text-decoration: none;
     font-size: 1.2rem;
-    background-color: #5E605A;
+    background-color: lightgray;
     padding: 0;
     color: black;
 }
 
 .email:hover {
-    background-color: #5E605A;
+    background-color: lightgray;
 }
 
 @media (max-width: 1000px){
